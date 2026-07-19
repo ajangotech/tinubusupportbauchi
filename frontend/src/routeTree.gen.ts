@@ -19,7 +19,6 @@ import { Route as EventsRouteImport } from './routes/events'
 import { Route as LeadershipRouteImport } from './routes/leadership'
 import { Route as NewsRouteImport } from './routes/news'
 import { Route as RegisterRouteImport } from './routes/register'
-import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as VerifyRouteImport } from './routes/verify'
 import { Route as AuthenticatedAdminRouteImport } from './routes/_authenticated/admin'
 import { Route as AuthenticatedCorporateDashboardRouteImport } from './routes/_authenticated/corporate-dashboard'
@@ -76,11 +75,6 @@ const RegisterRoute = RegisterRouteImport.update({
   path: '/register',
   getParentRoute: () => rootRouteImport,
 } as any)
-const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
-  id: '/sitemap.xml',
-  path: '/sitemap.xml',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const VerifyRoute = VerifyRouteImport.update({
   id: '/verify',
   path: '/verify',
@@ -123,7 +117,6 @@ export interface FileRoutesByFullPath {
   '/leadership': typeof LeadershipRoute
   '/news': typeof NewsRouteWithChildren
   '/register': typeof RegisterRoute
-  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/verify': typeof VerifyRouteWithChildren
   '/admin': typeof AuthenticatedAdminRoute
   '/corporate-dashboard': typeof AuthenticatedCorporateDashboardRoute
@@ -141,7 +134,6 @@ export interface FileRoutesByTo {
   '/leadership': typeof LeadershipRoute
   '/news': typeof NewsRouteWithChildren
   '/register': typeof RegisterRoute
-  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/verify': typeof VerifyRouteWithChildren
   '/admin': typeof AuthenticatedAdminRoute
   '/corporate-dashboard': typeof AuthenticatedCorporateDashboardRoute
@@ -161,7 +153,6 @@ export interface FileRoutesById {
   '/leadership': typeof LeadershipRoute
   '/news': typeof NewsRouteWithChildren
   '/register': typeof RegisterRoute
-  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/verify': typeof VerifyRouteWithChildren
   '/_authenticated/admin': typeof AuthenticatedAdminRoute
   '/_authenticated/corporate-dashboard': typeof AuthenticatedCorporateDashboardRoute
@@ -181,7 +172,6 @@ export interface FileRouteTypes {
     | '/leadership'
     | '/news'
     | '/register'
-    | '/sitemap.xml'
     | '/verify'
     | '/admin'
     | '/corporate-dashboard'
@@ -199,7 +189,6 @@ export interface FileRouteTypes {
     | '/leadership'
     | '/news'
     | '/register'
-    | '/sitemap.xml'
     | '/verify'
     | '/admin'
     | '/corporate-dashboard'
@@ -218,7 +207,6 @@ export interface FileRouteTypes {
     | '/leadership'
     | '/news'
     | '/register'
-    | '/sitemap.xml'
     | '/verify'
     | '/_authenticated/admin'
     | '/_authenticated/corporate-dashboard'
@@ -238,7 +226,6 @@ export interface RootRouteChildren {
   LeadershipRoute: typeof LeadershipRoute
   NewsRoute: typeof NewsRouteWithChildren
   RegisterRoute: typeof RegisterRoute
-  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   VerifyRoute: typeof VerifyRouteWithChildren
 }
 
@@ -312,13 +299,6 @@ declare module '@tanstack/react-router' {
       path: '/register'
       fullPath: '/register'
       preLoaderRoute: typeof RegisterRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/sitemap.xml': {
-      id: '/sitemap.xml'
-      path: '/sitemap.xml'
-      fullPath: '/sitemap.xml'
-      preLoaderRoute: typeof SitemapDotxmlRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/verify': {
@@ -413,19 +393,8 @@ const rootRouteChildren: RootRouteChildren = {
   LeadershipRoute: LeadershipRoute,
   NewsRoute: NewsRouteWithChildren,
   RegisterRoute: RegisterRoute,
-  SitemapDotxmlRoute: SitemapDotxmlRoute,
   VerifyRoute: VerifyRouteWithChildren,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
