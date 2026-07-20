@@ -10,6 +10,7 @@ import { Card } from "@/components/ui/card";
 import { blogApi, eventsApi, adminApi, toList } from "@/lib/api";
 import heroImg from "@/assets/logo.png";
 import outreachImg from "@/assets/one.jpeg";
+import executiveTeamImg from "@/assets/leadership/002.jpeg";
 import groupImg from "@/assets/two.jpeg";
 import { formatDate } from "@/lib/tsb-utils";
 
@@ -169,6 +170,60 @@ function HomePage() {
           cta={<Link to="/news">View gallery</Link>}
         />
       </section>
+
+      {/* ============ EXECUTIVE TEAM ============ */}
+<section className="mx-auto mt-20 max-w-7xl px-4">
+  <div className="grid items-center gap-10 overflow-hidden rounded-3xl gradient-blue p-6 text-white shadow-elegant md:grid-cols-2 md:p-10">
+    
+    {/* Image */}
+    <div className="overflow-hidden rounded-2xl shadow-2xl">
+      <img
+        src={executiveTeamImg}
+        alt="Tinubu Support Bauchi 2027 Executive Members and Organization Members"
+        className="h-full w-full object-cover transition-transform duration-700 hover:scale-105"
+      />
+    </div>
+
+    {/* Content */}
+    <div>
+      <div className="text-xs font-semibold uppercase tracking-[0.25em] text-[color:var(--tsb-green)]">
+        Our Leadership Team
+      </div>
+
+      <h2 className="mt-3 font-display text-3xl font-extrabold leading-tight md:text-4xl">
+        United Leadership.
+        <span className="block text-[color:var(--tsb-green)]">
+          Shared Vision.
+        </span>
+      </h2>
+
+      <p className="mt-5 text-white/85 leading-relaxed">
+        The Tinubu Support Bauchi 2027 leadership team brings together
+        dedicated men and women committed to mobilizing citizens, strengthening
+        grassroots engagement and supporting the vision of a greater Nigeria.
+      </p>
+
+      <p className="mt-4 text-white/75 leading-relaxed">
+        Our executives and members work together across Bauchi State to promote
+        unity, good governance, civic participation and sustainable development.
+      </p>
+
+      <div className="mt-7 flex flex-wrap gap-3">
+        <div className="rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm">
+          🤝 Teamwork
+        </div>
+
+        <div className="rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm">
+          🇳🇬 National Unity
+        </div>
+
+        <div className="rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm">
+          🌱 Grassroots Engagement
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
       {/* ============ ABOUT ============ */}
       <section className="mx-auto mt-24 grid max-w-7xl gap-12 px-4 md:grid-cols-2">
