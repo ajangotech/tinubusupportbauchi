@@ -12,6 +12,7 @@ import habibuAbdulmumin from "@/assets/leadership/habibu-abdulmumin.jpeg";
 import hafsatAliyu from "@/assets/leadership/hafsat-aliyu.jpeg";
 import ubaidaAbdulkadir from "@/assets/leadership/ubaida-abdulkadir.jpeg";
 import charityAgasha from "@/assets/leadership/charity-agasha.jpeg";
+import abdurahmanBabaji from "@/assets/leadership/abdurahman-babaji.jpeg";
 import yakubuLk from "@/assets/leadership/yakubu-lk.jpeg";
 import maryamBauchi from "@/assets/leadership/maryam-bauchi.jpeg";
 
@@ -64,6 +65,11 @@ const leaders: Leader[] = [
     photo_url: musaNaManzo,
   },
   {
+    full_name: "Charity Agasha",
+    position: "Vice Chairman",
+    photo_url: charityAgasha,
+  },
+  {
     full_name: "Ibrahim Abubakar",
     position: "Financial Secretary",
     photo_url: ibrahimAbubakar,
@@ -95,33 +101,33 @@ const leaders: Leader[] = [
   },
   {
     full_name: "Habibu Abdulmumin",
-    position: "Member",
+    position: "Youth Affairs",
     photo_url: habibuAbdulmumin,
   },
   {
     full_name: "Hafsat Aliyu",
-    position: "Member",
+    position: "Women Affairs",
     photo_url: hafsatAliyu,
   },
   {
     full_name: "Ubaida Abdulkadir",
-    position: "Member",
+    position: "Director of Mobilization",
     photo_url: ubaidaAbdulkadir,
   },
   {
-    full_name: "Charity Agasha",
-    position: "Member",
-    photo_url: charityAgasha,
-  },
-  {
     full_name: "Yakubu LK",
-    position: "Member",
+    position: "Director or Administration",
     photo_url: yakubuLk,
   },
   {
     full_name: "Maryam Bauchi",
-    position: "Member",
+    position: "Director of Welfare",
     photo_url: maryamBauchi,
+  },
+  {
+    full_name: "Abdurahman Babaji",
+    position: "Legal Adviser",
+    photo_url: abdurahmanBabaji,
   },
 ];
 
