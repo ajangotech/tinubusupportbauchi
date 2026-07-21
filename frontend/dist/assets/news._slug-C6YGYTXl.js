@@ -1,1 +1,0 @@
-import{j as t,L as o}from"./index-BFtmfkFE.js";const e=()=>t.jsxs("div",{className:"mx-auto max-w-2xl px-4 py-24 text-center",children:[t.jsx("h1",{className:"font-display text-3xl font-extrabold",children:"Article not found"}),t.jsx(o,{to:"/news",className:"mt-4 inline-block text-[color:var(--tsb-green)]",children:"← Back to news"})]});export{e as notFoundComponent};

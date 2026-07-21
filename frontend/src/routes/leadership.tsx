@@ -70,7 +70,7 @@ const leaders: Leader[] = [
   },
   {
     full_name: "Abdullahi Umar Galadima",
-    position: "Member",
+    position: "Secretary",
     photo_url: abdullahiUmarGaladima,
   },
   {
@@ -153,15 +153,17 @@ function LeadershipPage() {
           >
             {/* Leader Image */}
             <div className="aspect-[4/3] overflow-hidden gradient-blue">
-              <img
-                src={leader.photo_url}
-                alt={leader.full_name}
-                className="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
-              />
+              <div className="flex aspect-[4/3] items-center justify-center overflow-hidden bg-gray-100">
+                <img
+                  src={leader.photo_url}
+                  alt={leader.full_name}
+                  className="max-h-full max-w-full object-contain transition-transform duration-500 hover:scale-105"
+                />
+              </div>
             </div>
 
             {/* Leader Details */}
-            <div className="p-5">
+            <div className="p-5 text-center">
               <h2 className="font-display text-lg font-bold">
                 {leader.full_name}
               </h2>
